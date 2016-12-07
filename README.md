@@ -1,8 +1,8 @@
 # webpack: the good parts, and then some other stuff too
 
-[Tuesday, July 26th at ng-nebraska][meetup]
+[Wednesday, December 7th at OPI offices][meetup]
 
-The slide-deck for the presentation given at ng-nebraska. The slides can be [viewed online here][slide-deck]
+The slide-deck for the presentation given at a local "lunch & learn". The slides can be [viewed online here][slide-deck]
 
-[meetup]: http://www.meetup.com/ng-nebraska/events/232576541/?
-[slide-deck]: https://dschau.github.io/webpack-presentation
+[meetup]: https://objectpartners.com/omaha-tech-talk/
+[slide-deck]: https://dschau.github.io/webpack-lunch-and-learn

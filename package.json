@@ -14,7 +14,7 @@
   "author": "Dustin Schau <dustinschau@gmail.com>",
   "repository": {
     "type": "git",
-    "repository": "https://github.com/DSchau/webpack-presentation"
+    "repository": "https://github.com/DSchau/webpack-lunch-and-learn.git"
   },
   "license": "MIT",
   "dependencies": {
@@ -46,7 +46,7 @@
     "eslint-plugin-react": "^3.6.3",
     "express": "^4.13.3",
     "file-loader": "^0.8.4",
-    "gh-pages": "^0.11.0",
+    "gh-pages": "~0.12.0",
     "html-loader": "^0.4.0",
     "html-webpack-plugin": "^2.22.0",
     "is-buffer": "^1.1.1",
