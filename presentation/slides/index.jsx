@@ -20,8 +20,8 @@ import * as WrapUp from './wrap-up/';
 
 const theme = createTheme({
   primary: '#000000',
-  secondary: '#62A8FF',
-  tertiary: '#EEEEEE',
+  secondary: '#4FC3F7',
+  tertiary: '#E1F5FE',
   quartenary: '#FFFFFF'
 });
 
@@ -29,7 +29,7 @@ export class SlideDeck extends Component {
   render() {
     return (
       <Spectacle theme={theme}>
-        <Deck progress="bar" transition={["slide", "zoom"]} transitionDuration={350}>
+        <Deck progress="bar" transition={["slide", "fade"]} transitionDuration={500}>
           {
             makeSlides(
               IntroSlides,

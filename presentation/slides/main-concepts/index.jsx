@@ -5,6 +5,7 @@ import {
   CodePane,
   Fill,
   Heading,
+  Image,
   Layout,
   List,
   ListItem
@@ -14,7 +15,9 @@ import preloader from 'spectacle/lib/utils/preloader';
 
 import chunk from 'lodash.chunk';
 
-const images = {};
+const images = {
+  webpackDashboard: require('assets/images/webpack-dashboard.png')
+};
 
 preloader(images);
 
@@ -78,12 +81,12 @@ export const Loaders = {
 export const SampleLoaderFile = {
   code: require('!!raw!assets/code/loaders.js'),
   ranges: [
-    { loc: [0, 11], title: 'Teaching Webpack new syntax' },
+    { loc: [0, 13], title: 'Teaching Webpack new syntax' },
     { loc: [0, 2], title: 'CSS' },
     { loc: [3, 4], title: 'SCSS' },
-    { loc: [8, 11], title: 'Typescript/ES6/etc.' },
-    { loc: [5, 7], title: 'Even images' },
-    { loc: [0, 11], title: 'and more!' }
+    { loc: [5, 8], title: 'images' },
+    { loc: [9, 11], title: 'Typescript/ES6/etc.' },
+    { loc: [0, 13], title: 'and more!' }
   ]
 };
 
@@ -167,16 +170,6 @@ export const UserfulLoaders = {
   }
 };
 
-export const AnatomyOfALoaderTitle = {
-  slide() {
-    return (
-      <div>
-        <Heading size={4} textColor="secondary" caps>Anatomy of a Loader</Heading>
-      </div>
-    );
-  }
-};
-
 export const AnatomyOfALoader = {
   code: require('!!raw!assets/code/loader-example.js'),
   ranges: [
@@ -233,6 +226,17 @@ export const HtmlWebpackPlugin = {
         <Appear>
           <CodePane lang="javascript" textSize={20} margin={10}>{ require('!!raw!assets/code/html-webpack-plugin.js')}</CodePane>
         </Appear>
+      </div>
+    );
+  }
+};
+
+export const WebpackDashboardPlugin = {
+  bgImage: images.webpackDashboard,
+  slide() {
+    return (
+      <div>
+        <Heading size={1} textColor="secondary" fit>webpack-dashboard</Heading>
       </div>
     );
   }

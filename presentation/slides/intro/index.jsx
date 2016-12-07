@@ -16,12 +16,12 @@ import {
 import preloader from 'spectacle/lib/utils/preloader';
 
 const images = {
+  webpackLogo: require('assets/images/webpack.svg'),
   competitors: {
     grunt: require('assets/images/grunt-logo.svg'),
     gulp: require('assets/images/gulp.svg'),
     broccoli: require('assets/images/brocolli.png'),
-    brunch: require('assets/images/brunch.svg'),
-    browserify: require('assets/images/browserify.svg')
+    brunch: require('assets/images/brunch.svg')
   },
   gifs: {
     homer: 'https://thumbs.gfycat.com/SophisticatedBasicKudu-size_restricted.gif',
@@ -34,16 +34,28 @@ export const Title = {
   slide() {
     return (
       <div>
+        <Image src={images.webpackLogo} width="20%"/>
         <Heading size={1} fit caps>
           Webpack
         </Heading>
         <Heading size={2} fit caps>
           the good parts*
         </Heading>
-        <Heading size={6} textColor="#CCC">
-          ... and some other stuff too
-        </Heading>
         <Heading size={8} textColor="white">Dustin Schau</Heading>
+      </div>
+    );
+  }
+};
+
+export const BoilerplateQuote = {
+  bgColor: 'secondary',
+  slide() {
+    return (
+      <div>
+        <BlockQuote>
+          <Quote textSize={42}>{ require('!!raw!assets/quotes/gaeron.txt') }</Quote>
+          <Cite>Dan Abramov</Cite>
+        </BlockQuote>
       </div>
     );
   }
@@ -100,6 +112,10 @@ export const DirectoryStructure = {
 export const Competitors = {
   bgColor: 'tertiary',
   slide() {
+    const state = {
+      strike: false
+    };
+
     return (
       <div>
         <Layout>
@@ -109,7 +125,7 @@ export const Competitors = {
                 return (
                   <Fill key={index}>
                     <Appear>
-                      <Image src={images.competitors[key]} height="200px" />
+                      <Image src={images.competitors[key]} height="200px"/>
                     </Appear>
                   </Fill>
                 );

@@ -18,10 +18,11 @@ const images = {
 preloader(images);
 
 export const Title = {
+  bgImage: 'https://media.giphy.com/media/l4JA1COQqiZB6/giphy.gif',
   slide() {
     return (
       <div>
-        <Heading size={1} caps fit>Questions</Heading>
+        <Heading size={1} caps fit textColor="black">Questions</Heading>
       </div>
     );
   }
@@ -31,10 +32,32 @@ export const Links = {
   slide() {
     return (
       <List>
-        <ListItem><Link textColor="secondary" href="https://www.youtube.com/watch?v=VkTCL6Nqm6Y">How Instagram uses Webpack</Link></ListItem>
-        <ListItem><Link textColor="secondary" href="https://github.com/petehunt/webpack-howto">webpack-how-to</Link></ListItem>
-        <ListItem><Link textColor="secondary" href="https://gist.github.com/sokra/27b24881210b56bbaff7">New in Webpack 2</Link></ListItem>
-        <ListItem><Link textColor="secondary" href="https://github.com/webpack/docs/wiki/list-of-plugins">List of Plugins</Link></ListItem>
+        {
+          [
+            {
+              href: 'https://webpack.js.org/',
+              text: '(New) Webpack Docs'
+            },
+            {
+              href: 'https://www.youtube.com/watch?v=VkTCL6Nqm6Y',
+              text: 'How Instagram uses Webpack'
+            },
+            {
+              href: 'https://github.com/petehunt/webpack-howto',
+              text: 'webpack-how-to'
+            },
+            {
+              href: 'https://gist.github.com/sokra/27b24881210b56bbaff7',
+              text: 'New in Webpack 2'
+            }
+          ].map(({ href, text }) => {
+            return (
+              <ListItem>
+                <Link textColor="secondary" href={href}>{text}</Link>
+              </ListItem>
+            );
+          })
+        }
       </List>
     );
   }

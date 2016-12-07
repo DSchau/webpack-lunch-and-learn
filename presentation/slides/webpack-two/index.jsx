@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import {
   Appear,
+  BlockQuote,
+  Cite,
   CodePane,
-  Heading
+  Heading,
+  Link,
+  Quote
 } from 'spectacle';
 
 import preloader from 'spectacle/lib/utils/preloader';
@@ -21,11 +25,30 @@ export const Title = {
   }
 };
 
-export const Blocker = {
+export const TobiasKoppersQuote = {
+  bgColor: 'secondary',
   slide() {
     return (
       <div>
-        <Heading size={4} textColor="secondary" caps>only blocker is documentation</Heading>
+        <BlockQuote>
+          <Quote textSize={42} style={{ whiteSpace: 'pre-line' }}>{ require('!!raw!assets/quotes/sokra.txt') }</Quote>
+          <Cite>
+            <Link href="https://github.com/webpack/webpack/issues/1545#issuecomment-264121567" style={{ color: 'white' }}>Tobias Koppers (12/1/2015)</Link>
+          </Cite>
+        </BlockQuote>
+      </div>
+    );
+  }
+};
+
+export const MigrationGuide = {
+  slide() {
+    return (
+      <div>
+        <Heading size={1} caps fit textColor="secondary">Minimal work to migrate</Heading>
+        <Heading size={5}>
+          <Link href="http://javascriptplayground.com/blog/2016/10/moving-to-webpack-2/" textColor="white">Guide</Link>
+        </Heading>
       </div>
     );
   }
@@ -49,6 +72,25 @@ export const TreeShakingExplanation = {
         <Appear>
           <CodePane lang="javascript" textSize="20" margin={20}>{ require('!!raw!assets/code/tree-shaking-import.js') }</CodePane>
         </Appear>
+      </div>
+    );
+  }
+};
+
+export const BabelRcTreeShakingConfig = {
+  code: require('!!raw!assets/code/.babelrc-tree-shaking'),
+  ranges: [
+    { loc: [0, 23], title: '.babelrc config' },
+    { loc: [4, 7], title: 'allow native import/export' },
+    { loc: [11, 14], title: 'commonjs for testing' }
+  ]
+};
+
+export const CodeSplittingHeader = {
+  slide() {
+    return (
+      <div>
+        <Heading size={4} textColor="secondary" caps>System.import split</Heading>
       </div>
     );
   }

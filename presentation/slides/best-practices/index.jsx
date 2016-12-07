@@ -34,6 +34,46 @@ export const SplitDevProd = {
   }
 };
 
+export const SetEnvironment = {
+  slide() {
+    return (
+      <div>
+        <CodePane lang="json" textSize={20} margin={20}>{ require('!!raw!assets/code/package-scripts.json')}</CodePane>
+      </div>
+    );
+  }
+};
+
+export const NpmScriptsProtip = {
+  slide() {
+    return (
+      <div>
+        <Heading size={2} textColor="secondary" caps>Pro-tip</Heading>
+        <Appear>
+          <Heading size={6} textColor="white">npm scripts can be prefixed with <Code textColor="white">pre</Code> or <Code textColor="white">post</Code> to run before or after script</Heading>
+        </Appear>
+      </div>
+    );
+  }
+};
+
+export const HashBundles = {
+  slide() {
+    return (
+      <div>
+        <Heading size={4} textColor="secondary" caps>hash production bundles</Heading>
+        <Heading size={6} textColor="secondary">
+          <Code textColor="white">bundle.js</Code> to 
+          <Code textColor="white">bundle.6c0673000c43e50e1232.js</Code>
+        </Heading>
+        <Appear>
+          <CodePane lang="javascript" textSize={20} margin={20}>{ require('!!raw!assets/code/webpack.config.hashed.js')}</CodePane>
+        </Appear>
+      </div>
+    );
+  }
+};
+
 export const UglifyContent = {
   slide() {
     return (
@@ -54,23 +94,23 @@ export const VendorDepsSplit = {
   }
 };
 
-export const Devtool = {
+export const VendorDepsSplitExample = {
   slide() {
     return (
       <div>
-        <Heading size={4} textColor="secondary" caps>Source maps</Heading>
-        <Appear><Heading size={6} textColor="secondary"><Code textColor="white">eval-source-map</Code> or <Code textColor="white">cheap-module-eval-source-map</Code> for dev</Heading></Appear>
-        <Appear><Heading size={6} textColor="secondary"><Code textColor="white">source-map</Code> for prod</Heading></Appear>
+        <CodePane lang="javascript" textSize={20} margin={20}>{ require('!!raw!assets/code/webpack.config.split.js')}</CodePane>
       </div>
     );
   }
 };
 
-export const Loaders = {
+export const Devtool = {
   slide() {
     return (
       <div>
-        <Heading size={4} textColor="secondary" caps>(almost always) use <Code textColor="white">include</Code></Heading>
+        <Heading size={4} textColor="secondary" caps>Source maps</Heading>
+        <Appear><Heading size={6} textColor="secondary"><Code textColor="white">eval-source-map</Code> or <Code textColor="white">cheap-module-eval-source-map</Code> or <Code textColor="white">eval</Code> for dev</Heading></Appear>
+        <Appear><Heading size={6} textColor="secondary"><Code textColor="white">source-map</Code> for prod</Heading></Appear>
       </div>
     );
   }
