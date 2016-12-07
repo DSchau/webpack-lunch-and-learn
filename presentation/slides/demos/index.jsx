@@ -55,7 +55,7 @@ export const FunctionalityLineItems = {
   slide() {
     return (
       <List>
-        <ListItem>Intelligently merge loaders</ListItem>
+        <ListItem>Replace(s) matching loaders</ListItem>
         <ListItem>concat plugins</ListItem>
         <ListItem>extend existing config</ListItem>
         <ListItem>Works great with separate env.configs</ListItem>

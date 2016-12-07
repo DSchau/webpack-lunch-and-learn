@@ -1,0 +1,1 @@
+Every single developer has their own opinions, and they call it "React/Redux [Webpack] Best Practices." So you end up being frustrated and pulling your hair out. I only started making progress when I decided to fuck it; I'm going to go with my guts.

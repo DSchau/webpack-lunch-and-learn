@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import {
   Appear,
+  BlockQuote,
+  Cite,
   Code,
   CodePane,
-  Heading
+  Heading,
+  Link,
+  Quote
 } from 'spectacle';
 
 import preloader from 'spectacle/lib/utils/preloader';
@@ -18,6 +22,20 @@ export const Title = {
       <div>
         <Heading size={1} caps fit>best practices</Heading>
         <Heading size={2} caps>(and some cool shit)</Heading>
+      </div>
+    );
+  }
+};
+
+export const QuickNote = {
+  bgColor: 'secondary',
+  slide() {
+    return (
+      <div>
+        <BlockQuote>
+          <Quote textSize={42}>{ require('!!raw!assets/quotes/sallar.txt') }</Quote>
+          <Cite>@sallar</Cite>
+        </BlockQuote>
       </div>
     );
   }
@@ -194,3 +212,26 @@ export const ResolveRootExample = {
     { loc: [2, 3], title: 'into this' }
   ]
 }
+
+export const WebpackBlocks = {
+  slide() {
+    return (
+      <div>
+        <Heading size={4} textColor="secondary">wepback-blocks</Heading>
+        <Link href="https://github.com/andywer/webpack-blocks" textColor="white">get it on github</Link>
+      </div>
+    );
+  }
+};
+
+export const WebpackBlocksExample = {
+  code: require('!!raw!assets/code/webpack-blocks.js'),
+  ranges: [
+    { loc: [0, 22], title: '"blocks" of config' },
+    { loc: [0, 1], title: 'Import helpers' },
+    { loc: [1, 5], title: 'Import tools' },
+    { loc: [7, 9], title: 'Build the config' },
+    { loc: [9, 13] },
+    { loc: [13, 20], title: 'Even supports env' }
+  ]
+};
