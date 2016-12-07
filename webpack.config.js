@@ -5,7 +5,7 @@ const assign = require('webpack-config-assign');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = assign({
-  devtool: 'eval',
+  devtool: '#source-map',
   entry: [
     'webpack-hot-middleware/client',
     'babel-polyfill',
