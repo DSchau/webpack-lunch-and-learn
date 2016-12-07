@@ -217,7 +217,7 @@ export const WebpackBlocks = {
   slide() {
     return (
       <div>
-        <Heading size={4} textColor="secondary">wepback-blocks</Heading>
+        <Heading size={4} textColor="secondary">wepback-blocks 📦</Heading>
         <Link href="https://github.com/andywer/webpack-blocks" textColor="white">get it on github</Link>
       </div>
     );
