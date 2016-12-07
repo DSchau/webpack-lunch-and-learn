@@ -1,10 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
+const assign = require('webpack-config-assign');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = {
-  devtool: 'source-map',
+module.exports = assign({
+  devtool: 'eval',
   entry: [
     'webpack-hot-middleware/client',
     'babel-polyfill',
@@ -30,47 +31,35 @@ module.exports = {
     ]
   },
   module: {
-    loaders: [{
-      test: /\.md$/,
-      loader: 'html-loader!markdown-loader?gfm=false'
-    }, {
-      test: /\.(js|jsx)$/,
-      exclude: /node_modules/,
-      loader: 'babel-loader',
-      query: {
-        presets:['react', 'es2015'],
-        env: {
-          development: {
-            plugins: [['react-transform', {
-              transforms: [{
-                transform: 'react-transform-hmr',
-                imports: ['react'],
-                locals: ['module']
-              }]
-            }]]
+    loaders: [
+      {
+        test: /\.md$/,
+        loader: 'html-loader!markdown-loader?gfm=false'
+      },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        query: {
+          presets:['react', 'es2015'],
+          env: {
+            development: {
+              plugins: [['react-transform', {
+                transforms: [{
+                  transform: 'react-transform-hmr',
+                  imports: ['react'],
+                  locals: ['module']
+                }]
+              }]]
+            }
           }
         }
+      },
+      {
+        test: /\.css$/,
+        loaders: ['style', 'raw'],
+        include: __dirname
       }
-    }, {
-      test: /\.css$/,
-      loaders: ['style', 'raw'],
-      include: __dirname
-    }, {
-      test: /\.svg$/,
-      loader: 'url?limit=10000&mimetype=image/svg+xml',
-      include: path.join(__dirname, 'assets')
-    }, {
-      test: /\.png$/,
-      loader: 'url-loader?mimetype=image/png',
-      include: path.join(__dirname, 'assets')
-    }, {
-      test: /\.gif$/,
-      loader: 'url-loader?mimetype=image/gif',
-      include: path.join(__dirname, 'assets')
-    }, {
-      test: /\.jpg$/,
-      loader: 'url-loader?mimetype=image/jpg',
-      include: path.join(__dirname, 'assets')
-    }]
+    ]
   }
-};
+}, require(`./webpack.config.${process.env.NODE_ENV}`));

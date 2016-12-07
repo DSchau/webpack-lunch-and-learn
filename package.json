@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "clean": "rimraf dist",
-    "build": "cross-env NODE_ENV=production webpack --config webpack.config.production.js",
+    "build": "cross-env NODE_ENV=production webpack",
     "lint": "eslint --ext .js,.jsx .",
     "deploy": "npm run build",
     "postdeploy": "gh-pages -d dist",
@@ -59,6 +59,7 @@
     "surge": "latest",
     "url-loader": "^0.5.6",
     "webpack": "^1.12.8",
+    "webpack-config-assign": "~1.0.0-beta",
     "webpack-dev-middleware": "^1.2.0",
     "webpack-hot-middleware": "^2.5.0"
   }
