@@ -33,7 +33,7 @@ export const TobiasKoppersQuote = {
         <BlockQuote>
           <Quote textSize={42} style={{ whiteSpace: 'pre-line' }}>{ require('!!raw!assets/quotes/sokra.txt') }</Quote>
           <Cite>
-            <Link href="https://github.com/webpack/webpack/issues/1545#issuecomment-264121567" style={{ color: 'white' }}>Tobias Koppers (12/1/2015)</Link>
+            <Link href="https://github.com/webpack/webpack/issues/1545#issuecomment-264121567" style={{ color: 'white' }}>Tobias Koppers (12/1/2016)</Link>
           </Cite>
         </BlockQuote>
       </div>
